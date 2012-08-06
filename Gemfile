@@ -21,7 +21,6 @@ gem 'heroku'
 gem 'jquery-rails'
 gem "slim"
 gem "slim-rails"
-gem "rails-backbone"
 
 # Tools
 gem 'simple_form'
