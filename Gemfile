@@ -2,47 +2,50 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.7'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+# Database
 gem 'pg'
-
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
-end
-
-gem 'jquery-rails'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
-
 gem "foreigner"
-gem "capybara", :group => [:development, :test]
-gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
-gem "shoulda-matchers", :group => [:development, :test]
-gem "machinist", ">= 2.0.0.beta2", :group => [:development, :test]
-gem "jasmine", :group => [:development, :test]
+
+# Improvements
+gem 'inherited_resources'
+gem 'has_scope'
+
+# Authentication
+gem "devise", "~> 2.1.2"
+
+# Heroku
+gem 'thin'
+gem 'heroku'
+
+# Frontend stuff
+gem 'jquery-rails'
 gem "slim"
 gem "slim-rails"
-gem "compass-rails", :group => [:assets]
+gem "rails-backbone"
+
+# Tools
+gem 'simple_form'
+gem 'auto_html'
+
+group :assets do
+  gem 'sass-rails',   '~> 3.2.5'
+  gem 'coffee-rails', '~> 3.2.2'
+  gem "compass-rails"
+  gem 'bootstrap-sass'
+ gem "uglifier", '>= 1.0.3'
+end
+
+group :production do
+  gem "execjs"
+  gem 'therubyracer', :platform => :ruby
+end
+
+group :development, :test do
+  gem "rspec-rails", ">= 2.11.0"
+  gem "shoulda-matchers"
+  gem "machinist", ">= 2.0"
+  gem "ffaker"
+  gem 'database_cleaner'
+  gem "capybara"
+  gem "jasmine"
+end
