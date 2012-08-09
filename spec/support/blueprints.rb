@@ -8,3 +8,9 @@ User.blueprint do
   password {'josemar'}
   password_confirmation {'josemar'}
 end
+
+Authorization.blueprint do
+  user {User.make!}
+  provider {"facebook"}
+  uid {10000}
+end
