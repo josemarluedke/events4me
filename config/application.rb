@@ -55,8 +55,19 @@ module Events4me
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    config.assets.initialize_on_precompile = false
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.generators do |g|
+      g.stylesheets false
+      g.javascripts false
+      g.helpers false
+      g.template_engine :slim
+      g.test_framework :rspec,
+        :view_specs => false,
+        :helper_specs => false
+    end
   end
 end
