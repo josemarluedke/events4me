@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title App Title Here
+    title Events4me
     = stylesheet_link_tag "application"
     meta[charset="utf-8"]
     meta[name="description" content=""]
@@ -11,6 +11,20 @@ html
     = csrf_meta_tag
     = javascript_include_tag "application"
   body data-controller-class=controller.class.name data-controller-name=controller.controller_name.camelize data-action=controller.action_name.camelize
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.brand href="/" Events4me
+          ul.nav
+            li.active
+              = link_to 'Home', root_path
+          ul.nav.secondary-nav
+            li
+              = link_to "Profile settings", edit_user_registration_path(current_user) if user_signed_in?
+              = link_to "Sign in", new_user_session_path unless user_signed_in?
+            li= link_to "Sign up", new_user_registration_path unless user_signed_in?
+            li= link_to 'logout', destroy_user_session_path, :method => :delete if user_signed_in?
     header
-    = yield
+    .container
+      = yield
     footer
