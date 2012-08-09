@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
       if data = session[:omniauth] && session[:omniauth]["info"]
         user.email = data["email"] if data["email"].present?
         user.name = data["name"]
-        user.username = data["nickname"]
         user.authorizations.build(provider: session[:omniauth]['provider'], uid: session[:omniauth]['uid'])
       end
     end
