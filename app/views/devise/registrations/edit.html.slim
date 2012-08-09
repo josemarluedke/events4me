@@ -1,15 +1,34 @@
 h2
   | Edit #{resource_name.to_s.humanize}
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :name, :required => true, :autofocus => true
-    = f.input :email, :required => true
-    = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false
-    = f.input :password_confirmation, :required => false
-    = f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true
-  .form-actions
-    = f.button :submit, "Update"
+div.row
+  .span6
+    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :name, :required => true, :autofocus => true
+        = f.input :email, :required => true
+        = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false
+        = f.input :password_confirmation, :required => false
+        = f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true
+      .form-actions
+        = f.button :submit, "Update"
+
+  .span6
+    - if devise_mapping.omniauthable?
+      table.table.table-bordered
+        thead
+          tr
+            th.span3 Provider
+            td Connect/Disconect
+        tbody
+          - resource_class.omniauth_providers.each do |provider_name|
+            tr
+              td= provider_name.to_s.titleize
+              td
+                - provider = current_user.authorizations.provider(provider_name).first
+                = link_to "Connect your #{provider_name.to_s.titleize}", omniauth_authorize_path(resource_name, provider_name) unless provider.present?
+                = link_to "Disconnect from #{provider_name.to_s.titleize}", authorization_path(provider), method: :delete if provider.present?
+
 h3 Cancel my account
 p
   | Unhappy? #{link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete}.
