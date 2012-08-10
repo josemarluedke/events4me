@@ -3,9 +3,13 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable, :omniauthable
 
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :admin
   has_many :authorizations, dependent: :destroy
   validates :name, presence: true
+
+  def admin?
+    admin
+  end
 
   def self.new_with_session(params, session)
     super.tap do |user|
