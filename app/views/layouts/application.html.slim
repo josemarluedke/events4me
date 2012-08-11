@@ -19,11 +19,19 @@ html
             li.active
               = link_to 'Home', root_path
           ul.nav.secondary-nav
-            li
-              = link_to "Profile settings", edit_user_registration_path(current_user) if user_signed_in?
-              = link_to "Sign in", new_user_session_path unless user_signed_in?
+            li= link_to "Sign in", new_user_session_path unless user_signed_in?
             li= link_to "Sign up", new_user_registration_path unless user_signed_in?
-            li= link_to 'logout', destroy_user_session_path, :method => :delete if user_signed_in?
+          - if user_signed_in?
+            ul.nav.pull-right
+              li.dropdown
+                a.dropdown-toggle href="#" data-toggle="dropdown"
+                  img src="#{current_user.avatar_url}" height="22" width="22"
+                  = current_user.name
+                  b.caret
+                ul.dropdown-menu
+                  li= link_to "Profile settings", edit_user_registration_path(current_user)
+                  li= link_to 'logout', destroy_user_session_path, :method => :delete if user_signed_in?
+
     header
     .container
       = yield
