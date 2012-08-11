@@ -29,6 +29,10 @@ gem "slim-rails"
 gem 'simple_form'
 gem 'auto_html'
 
+# Administration and access management
+gem 'rails_admin'
+gem 'cancan'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
