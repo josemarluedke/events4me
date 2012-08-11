@@ -20,3 +20,8 @@ State.blueprint do
   name {'Rio grande do sul'}
   uf {'RS'}
 end
+
+City.blueprint do
+  name {'Taquara'}
+  state {State.make!}
+end
