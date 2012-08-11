@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :name, :email, :password, :image_url, :password_confirmation, :remember_me, :admin, :push, :birthdate
   has_many :authorizations, dependent: :destroy
+  has_many :devices, dependent: :destroy
   validates :name, :push, :birthdate, presence: true
 
   def admin?

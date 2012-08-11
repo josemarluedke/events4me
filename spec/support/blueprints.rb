@@ -15,3 +15,11 @@ Authorization.blueprint do
   provider {"facebook"}
   uid {10000}
 end
+
+Device.blueprint do
+  user {User.make!}
+  udid {"123456789"}
+  name {"Nokia  5120"}
+  push_token {"3467898654323456789098764"}
+  type {"Nokia"}
+end
