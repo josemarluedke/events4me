@@ -30,7 +30,7 @@ html
                   b.caret
                 ul.dropdown-menu
                   li= link_to "Profile settings", edit_user_registration_path(current_user)
-                  li= link_to 'logout', destroy_user_session_path, :method => :delete if user_signed_in?
+                  li= link_to 'Logout', destroy_user_session_path, :method => :delete if user_signed_in?
 
     header
     .container
