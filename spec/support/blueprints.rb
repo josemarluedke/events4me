@@ -15,3 +15,8 @@ Authorization.blueprint do
   provider {"facebook"}
   uid {10000}
 end
+
+State.blueprint do
+  name {'Rio grande do sul'}
+  uf {'RS'}
+end
