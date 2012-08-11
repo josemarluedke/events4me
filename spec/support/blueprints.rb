@@ -5,6 +5,7 @@ require 'machinist/active_record'
 User.blueprint do
   name {'Josemar Davi Luedke'}
   email {'josemarluedke@gmail.com'}
+  birthdate {Date.current}
   password {'josemar'}
   password_confirmation {'josemar'}
 end
