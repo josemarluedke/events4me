@@ -23,3 +23,13 @@ Device.blueprint do
   push_token {"3467898654323456789098764"}
   type {"Nokia"}
 end
+
+State.blueprint do
+  name {'Rio grande do sul'}
+  uf {'RS'}
+end
+
+City.blueprint do
+  name {'Taquara'}
+  state {State.make!}
+end
