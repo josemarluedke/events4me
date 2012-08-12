@@ -60,3 +60,10 @@ Session.blueprint do
   price {'[{"Inteira":22}]'}
   event {Event.make!}
 end
+
+FeaturedEvent.blueprint do
+  initial_date {Date.current}
+  end_date {Date.current}
+  priority {0}
+  event {Event.make!}
+end
