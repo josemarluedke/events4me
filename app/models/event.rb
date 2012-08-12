@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   belongs_to :place
+<<<<<<< HEAD
   has_many :sessions
   attr_accessible :description, :duration, :image, :min_age, :name, :visible, :place_id, :place, :sessions_id
   validates :description, :min_age, :name, :visible, :place, presence: true
