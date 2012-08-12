@@ -33,3 +33,11 @@ City.blueprint do
   name {'Taquara'}
   state {State.make!}
 end
+
+Place.blueprint do
+  name {'Taquara'}
+  address {'Travessa Reis'}
+  number {250}
+  district {'Santa Rosa'}
+  city {City.make!}
+end
