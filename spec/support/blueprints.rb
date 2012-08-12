@@ -46,3 +46,11 @@ Organization.blueprint do
   name {'TechParty'}
   place {Place.make!}
 end
+
+Event.blueprint do
+  name {'TechParty Talk'}
+  description {'Palestras sobre tecnologia'}
+  min_age {12}
+  visible {true}
+  place {Place.make!}
+end
