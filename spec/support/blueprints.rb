@@ -54,3 +54,9 @@ Event.blueprint do
   visible {true}
   place {Place.make!}
 end
+
+Session.blueprint do
+  datetime {Date.current}
+  price {'[{"Inteira":22}]'}
+  event {Event.make!}
+end
