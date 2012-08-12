@@ -41,3 +41,8 @@ Place.blueprint do
   district {'Santa Rosa'}
   city {City.make!}
 end
+
+Organization.blueprint do
+  name {'TechParty'}
+  place {Place.make!}
+end
