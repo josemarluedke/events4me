@@ -3,10 +3,14 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable, :omniauthable
 
-  attr_accessible :name, :email, :password, :image_url, :password_confirmation, :remember_me, :admin
+  attr_accessible :name, :email, :password, :image_url, :password_confirmation, :remember_me, :admin, :push, :birthdate
   has_many :authorizations, dependent: :destroy
+<<<<<<< HEAD
   validates :name, presence: true
   before_save :ensure_authentication_token
+=======
+  validates :name, :push, :birthdate, presence: true
+>>>>>>> 1e048f9ab336e8cbe882985fa6c1d77279ea9811
 
   def admin?
     admin
