@@ -3,4 +3,9 @@ class City < ActiveRecord::Base
 
   attr_accessible :name, :state_id
   validates :name, :state, presence: true
+
+  def serializable_hash(options={})
+    options = {include: :state}.merge(options)
+    super(options)
+  end
 end
