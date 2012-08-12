@@ -28,6 +28,7 @@ gem "slim-rails"
 # Tools
 gem 'simple_form'
 gem 'auto_html'
+gem 'useragent'
 
 # Administration and access management
 gem 'rails_admin'

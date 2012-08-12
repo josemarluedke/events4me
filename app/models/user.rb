@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :image_url, :password_confirmation, :remember_me, :admin
   has_many :authorizations, dependent: :destroy
   validates :name, presence: true
+  before_save :ensure_authentication_token
 
   def admin?
     admin
