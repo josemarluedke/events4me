@@ -41,3 +41,29 @@ Place.blueprint do
   district {'Santa Rosa'}
   city {City.make!}
 end
+
+Organization.blueprint do
+  name {'TechParty'}
+  place {Place.make!}
+end
+
+Event.blueprint do
+  name {'TechParty Talk'}
+  description {'Palestras sobre tecnologia'}
+  min_age {12}
+  visible {true}
+  place {Place.make!}
+end
+
+Session.blueprint do
+  datetime {Date.current}
+  price {'[{"Inteira":22}]'}
+  event {Event.make!}
+end
+
+FeaturedEvent.blueprint do
+  initial_date {Date.current}
+  end_date {Date.current}
+  priority {0}
+  event {Event.make!}
+end
