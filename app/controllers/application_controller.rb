@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   # API
   # Use ?auth_token=
-  before_filter :skip_trackable
+  before_filter :skip_trackable, :set_locale
   def skip_trackable
     request.env['devise.skip_trackable'] = true
   end
@@ -24,6 +24,19 @@ class ApplicationController < ActionController::Base
   protected
   def render_404
     raise ActionController::RoutingError.new('Not Found')
+  end
+
+  def set_locale
+    if user_signed_in?
+      I18n.locale = current_user.language
+    else
+      I18n.locale = params[:locale] || I18n.default_locale
+    end
+  end
+
+  def default_url_options(options={})
+    logger.debug "default_url_options is passed options: #{options.inspect}\n"
+    { :locale => I18n.locale }
   end
 end
 
