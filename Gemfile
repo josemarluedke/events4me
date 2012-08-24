@@ -30,6 +30,9 @@ gem 'simple_form'
 gem 'auto_html'
 gem 'useragent'
 
+# Navigation
+gem 'simple-navigation'
+
 # Administration and access management
 gem 'rails_admin'
 gem 'cancan'
