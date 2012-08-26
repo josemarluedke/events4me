@@ -15,7 +15,7 @@
 @import bootstrap-responsive
 
 body
-  padding-top: 50px
+  padding-top: 60px
 
 .dropdown
   .dropdown-toggle
@@ -29,6 +29,26 @@ body
       width: 50px
     #user_birthdate_1i
       width: 62px
+
+.navbar-inner
+  background: #292C32 url("navbar-bg.png") repeat-x
+  min-height: 50px
+
+.navbar .nav .active > a, .navbar .nav .active > a:hover
+  background: url("navbar-bg-active.png") repeat
+
+.navbar .nav > li > a
+  color: #FFF
+  padding-top: 17px
+
+.navbar .brand
+  width: 144px
+  height: 50px
+  position: absolute
+  left: 50%
+  margin-left: -72px
+  background: url('logo.png') no-repeat
+  text-indent: -99999em
 
 //Responsive
 @media (max-width: 979px)
