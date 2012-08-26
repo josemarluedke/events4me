@@ -13,6 +13,7 @@
  */
 @import bootstrap
 @import bootstrap-responsive
+@import compass/css3
 
 body
   padding-top: 60px
@@ -21,6 +22,7 @@ body
   .dropdown-toggle
     img
       margin-right: 5px
+      margin-top: -3px
 .form-inputs
   .date
     select
@@ -31,24 +33,30 @@ body
       width: 62px
 
 .navbar-inner
-  background: #292C32 url("navbar-bg.png") repeat-x
-  min-height: 50px
-
-.navbar .nav .active > a, .navbar .nav .active > a:hover
-  background: url("navbar-bg-active.png") repeat
+  background-color: transparent
+  @include background(image-url("noise.png"), linear-gradient(top, #3D4A5C, #232C37))
+  min-height: 40px
+  @include box-shadow(0 1px 5px rgba(0, 0, 0, 0.45))
 
 .navbar .nav > li > a
   color: #FFF
-  padding-top: 17px
 
 .navbar .brand
-  width: 144px
-  height: 50px
+  width: 206px
+  height: 30px
   position: absolute
   left: 50%
-  margin-left: -72px
+  margin-left: -103px
+  margin-top: 5px
+  padding: 0
   background: url('logo.png') no-repeat
   text-indent: -99999em
+
+// CSS for retina
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 2)
+  .navbar .brand
+    background-image: url('logo@2x.png')
+    background-size: 206px
 
 //Responsive
 @media (max-width: 979px)
