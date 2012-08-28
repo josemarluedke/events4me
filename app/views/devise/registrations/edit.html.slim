@@ -5,14 +5,28 @@ div.row
     = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
       = f.error_notification
       .form-inputs
-        = f.input :name, :required => true, :autofocus => true
-        = f.input :email, :required => true
+        = f.input :name, :required => true, :autofocus => true, :wrapper => :prepend do
+          = content_tag :span, content_tag(:i, "", :class => 'icon-user'), :class => "add-on"
+          = f.input_field :name, style: "width: 242px"
+
+        = f.input :email, :required => true, :wrapper => :prepend do
+          = content_tag :span, content_tag(:i, "", :class => 'icon-envelope'), :class => "add-on"
+          = f.input_field :email, style: "width: 242px"
+
         = f.input :birthdate, :required => true, :as => :date, :start_year => 2110, :end_year => 2010, :order => [:day, :month, :year]
-        = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false
-        = f.input :password_confirmation, :required => false
-        = f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true
-      .form-actions
-        = f.button :submit, "Update"
+        = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false, :wrapper => :prepend do
+          = content_tag :span, content_tag(:i, "", :class => 'icon-lock'), :class => "add-on"
+          = f.input_field :password, style: "width: 242px"
+
+        = f.input :password_confirmation, :required => false, :wrapper => :prepend do
+          = content_tag :span, content_tag(:i, "", :class => 'icon-lock'), :class => "add-on"
+          = f.input_field :password_confirmation, style: "width: 242px"
+
+        = f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true, :wrapper => :prepend do
+          = content_tag :span, content_tag(:i, "", :class => 'icon-lock'), :class => "add-on"
+          = f.input_field :current_password, style: "width: 242px"
+
+      = f.button :submit, "Update", class: "btn-primary", style: "width: 280px"
 
   .span6
     - if devise_mapping.omniauthable?
