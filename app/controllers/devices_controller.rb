@@ -2,7 +2,7 @@ class DevicesController < ApplicationController
   before_filter :authenticate_user!
 
   inherit_resources
-  respond_to :html, :json, :xml
+  respond_to :json, :xml
   actions :index, :create, :destroy
   before_filter do
     puts params.inspect
