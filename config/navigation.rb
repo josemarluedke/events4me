@@ -4,8 +4,8 @@ SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
     primary.dom_class = 'nav'
 
-    primary.item :home, 'Home', root_path
-    primary.item :events, 'Events', events_path
+    primary.item :home, t('layouts.application.links.home'), root_path
+    primary.item :events, t('layouts.application.links.events'), events_path
   end
 end
 
