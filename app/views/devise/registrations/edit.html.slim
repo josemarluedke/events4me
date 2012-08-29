@@ -13,7 +13,7 @@ div.row
           = content_tag :span, content_tag(:i, "", :class => 'icon-envelope'), :class => "add-on"
           = f.input_field :email, style: "width: 242px"
 
-        = f.input :birthdate, :required => true, :as => :date, :start_year => 2110, :end_year => 2010, :order => [:day, :month, :year]
+        = f.input :birthdate, :required => true, :as => :date, :start_year => Date.today.year - 110, :end_year => Date.today.year, :order => [:day, :month, :year]
         = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false, :wrapper => :prepend do
           = content_tag :span, content_tag(:i, "", :class => 'icon-lock'), :class => "add-on"
           = f.input_field :password, style: "width: 242px"
