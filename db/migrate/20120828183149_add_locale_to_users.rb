@@ -1,4 +1,4 @@
-class AddLanguageToUsers < ActiveRecord::Migration
+class AddLocaleToUsers < ActiveRecord::Migration
   def change
   	add_column :users, :locale, :string
   end
