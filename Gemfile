@@ -59,3 +59,8 @@ group :development, :test do
   gem "capybara"
   gem "jasmine"
 end
+
+group :development do
+  gem 'pry'
+  gem 'awesome_print'
+end
