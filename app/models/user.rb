@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :image_url, :password_confirmation, :remember_me, :admin, :push, :birthdate
   has_many :authorizations, dependent: :destroy
   has_many :devices, dependent: :destroy
+  has_many :events
   has_and_belongs_to_many :organizations
   validates :name, :push, :birthdate, presence: true
   before_save :ensure_authentication_token
