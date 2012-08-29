@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
   belongs_to :owner, :class_name => "User", :foreign_key => "user_id"
   has_many :sessions
   has_many :featured_events
-  attr_accessible :description, :duration, :image, :min_age, :name, :visible, :place_id, :place, :sessions_id
+  attr_accessible :description, :duration, :image, :min_age, :name, :visible, :place_id, :place, :session, :session_id, :organization, :organization_id
   validates :description, :min_age, :name, :visible, :place, presence: true
 
   attr_accessible :sessions_attributes

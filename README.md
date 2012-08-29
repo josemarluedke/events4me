@@ -54,5 +54,8 @@ Exemple
 
     curl http://localhost:3000/events/1.json?auth_token=TOKEN
 
+### Get organization of event
+
+    curl http://localhost:3000/events/1/organization.json?auth_token=TOKEN
 
 
