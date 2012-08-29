@@ -17,18 +17,18 @@ The format of result (html, json and xml) should like:
 
 Exemple
 
-    curl  http://localhost:3000/me.json?auth_token=3KzQzdstMHpLxDYfrjfp
+    curl http://localhost:3000/me.json?auth_token=3KzQzdstMHpLxDYfrjfp
 
 
 
 
 ### Get my informations
 
-    curl  http://localhost:3000/me.json?auth_token=TOKEN
+    curl http://localhost:3000/me.json?auth_token=TOKEN
 
 ### Get my devices
 
-    curl  http://localhost:3000/me/devices.json?auth_token=TOKEN
+    curl http://localhost:3000/me/devices.json?auth_token=TOKEN
 
 ### Create a device
 
@@ -38,13 +38,21 @@ Exemple
 
 		curl -X DELETE http://localhost:3000/me/devices/1.json?auth_token=TOKEN
 
+### Get my authorizations
+
+    curl http://localhost:3000/me/authorizations.json?auth_token=TOKEN
+
+### Delete a authorization
+
+		curl -X DELETE http://localhost:3000/me/authorizations/1.json?auth_token=TOKEN
+
 ### Get events
 
-    curl  http://localhost:3000/events.json?auth_token=TOKEN
+    curl http://localhost:3000/events.json?auth_token=TOKEN
 
 ### Get one event
 
-    curl  http://localhost:3000/events/1.json?auth_token=TOKEN
+    curl http://localhost:3000/events/1.json?auth_token=TOKEN
 
 
 
