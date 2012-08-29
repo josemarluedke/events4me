@@ -30,13 +30,8 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       I18n.locale = current_user.locale
     else
-      I18n.locale = params[:locale] || I18n.default_locale
+      I18n.locale = session[:locale] || I18n.default_locale
     end
-  end
-
-  def default_url_options(options={})
-    logger.debug "default_url_options is passed options: #{options.inspect}\n"
-    { :locale => I18n.locale }
   end
 end
 
