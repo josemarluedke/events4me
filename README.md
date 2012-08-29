@@ -30,12 +30,11 @@ Exemple
 
     curl  http://localhost:3000/me/devices.json?auth_token=TOKEN
 
-
 ### Create a device
 
     curl -X POST -d 'device[udid]=123&device[push_token]=asdf&device[name]=josemar+iphone&device[kind]=iphone' http://localhost:3000/me/devices.json?auth_token=TOKEN
 
-###Delete a device
+### Delete a device
 
 		curl -X DELETE http://localhost:3000/me/devices/1.json?auth_token=TOKEN
 
