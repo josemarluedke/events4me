@@ -1,13 +1,14 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
+pt-BR:
   layouts:
     application:
       links:
-        home: "Home"
-        profile_settings: "Profile settings"
-        logout: "Logout"
-        sign_in: "Sign in"
-        sign_up: "Sign up"
-  hello: "Hello world"
+        home: "Início"
+        profile_settings: "Configurações de perfil"
+        logout: "Sair"
+        sign_in: "Entrar"
+        sign_up: "Inscrever-se"
+
+  hello: "Olá mundo"
