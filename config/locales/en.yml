@@ -10,4 +10,6 @@ en:
         logout: "Logout"
         sign_in: "Sign in"
         sign_up: "Sign up"
+        home: "Home"
+        events: "Events"
   hello: "Hello world"

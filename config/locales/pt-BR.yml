@@ -10,5 +10,7 @@ pt-BR:
         logout: "Sair"
         sign_in: "Entrar"
         sign_up: "Inscrever-se"
+        home: "Início"
+        events: "Eventos"
 
   hello: "Olá mundo"
