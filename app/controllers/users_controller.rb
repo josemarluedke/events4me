@@ -3,10 +3,8 @@ class UsersController < ApplicationController
 
   inherit_resources
   respond_to :html, :json, :xml
-  action :show
-
-  def show
+  actions :show, :update
+  before_filter do
     params[:id] = current_user.id
-    show!
   end
 end

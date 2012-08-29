@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :devices, dependent: :destroy
   has_many :events
   has_and_belongs_to_many :organizations
-  validates :name, :push, :birthdate, presence: true
+  validates :name, :birthdate, presence: true
   before_save :ensure_authentication_token
 
   def admin?

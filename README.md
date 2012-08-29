@@ -26,6 +26,11 @@ Exemple
 
     curl http://localhost:3000/me.json?auth_token=TOKEN
 
+
+### Update my informations
+
+    curl -X PUT -d 'user[name]=Lorem&user[push]=false&user[locale]=pt-BR' http://localhost:3000/me/settings.json?auth_token=TOKEN
+
 ### Get my devices
 
     curl http://localhost:3000/me/devices.json?auth_token=TOKEN

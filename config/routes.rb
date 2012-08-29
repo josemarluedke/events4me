@@ -5,10 +5,11 @@ Events4me::Application.routes.draw do
   resources :events do
     resources :organization, controller: :organizations, only: [:index]
   end
-  resource :me, controller: "users", action: "show", as: :me do
+  resource :me, controller: :users, action: :show, as: :me do
     resources :devices, only: [:index, :create, :destroy]
     resources :authorizations, only: [:index, :destroy]
   end
+  put "me/settings" => "users#update", as: :me_settings
 
   root :to => 'home#index'
 end
