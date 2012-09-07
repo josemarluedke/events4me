@@ -1,2 +1,9 @@
 h1.title = @title = "Discover Events"
-
+.dropdown
+  a#city.dropdown-toggle data-toggle="dropdown" href="#"
+    | City
+    b.caret
+  ul.dropdown-menu aria-labelledby="city"
+    - City.all.each do |city|
+      li
+        a href="##{city.name}" = city.name
