@@ -16,6 +16,8 @@ organization = Organization.create({name: 'TechParty', place: place})
 
 event = Event.create({name: '5 TechParty', description: 'Quinta TechParty', min_age: 12, place: place, visible: true})
 
+category = Category.create({name: 'Tecnologia'})
+
 session = Session.create({event: event, datetime: Date.current, price: '[{"Inteira": 22}]'})
 
 featureEvent = FeaturedEvent.create({event: event, initial_date: Date.current, end_date: Date.current, priority: 0})

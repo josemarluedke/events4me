@@ -18,5 +18,6 @@ describe Event do
     it { should have_many :sessions }
     it { should have_many :featured_events }
     it { should have_and_belong_to_many :users }
+    it { should have_and_belong_to_many :categories }
   end
 end
