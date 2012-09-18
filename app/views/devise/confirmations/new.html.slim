@@ -3,6 +3,5 @@ h2 Resend confirmation instructions
   = f.error_notification
   .form-inputs
     = f.input :email, :required => true
-  .form-actions
-    = f.button :submit, "Resend confirmation instructions"
+  = f.button :submit, "Resend confirmation instructions", class: "btn-primary"
 = render "devise/shared/links"

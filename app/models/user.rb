@@ -3,12 +3,12 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable, :omniauthable
 
-  attr_accessible :name, :email, :password, :image_url, :password_confirmation, :remember_me, :admin, :push, :birthdate
+  attr_accessible :name, :email, :password, :image_url, :password_confirmation, :remember_me, :admin, :push, :birthdate, :locale
   has_many :authorizations, dependent: :destroy
   has_many :devices, dependent: :destroy
+  has_many :events
   has_and_belongs_to_many :organizations
-  accepts_nested_attributes_for :organizations, :allow_destroy => true
-  validates :name, :push, :birthdate, presence: true
+  validates :name, :birthdate, presence: true
   before_save :ensure_authentication_token
 
   def admin?

@@ -1,30 +1,18 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
 @import bootstrap
 @import bootstrap-responsive
-body
-  margin-top: 50px
+@import compass/css3
 
-.dropdown
-  .dropdown-toggle
-    img
-      margin-right: 5px
-.form-inputs
-  .date
-    select
-      width: 100px
-    #user_birthdate_3i
-      width: 50px
-    #user_birthdate_1i
-      width: 62px
+// App
+@import content/devise
+@import content/navbar
+
+@import miv/fonts
+@import miv/generic
+
+body
+  padding-top: 50px
+  background: image-url("bg.jpeg")
+
+// App resets
+@import content/mobile
+@import content/responsive

@@ -229,6 +229,6 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = "/my_engine/users/auth"
-  config.omniauth :facebook, "357671007647745", "910dc32cd1722f5466d725b4b15aa7ab", {:client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}}
-  config.omniauth :twitter, "81lnIYKf5J52Zvr2ezEXTg", "YPT2TfI7jzmiemHiZVIpbbWUHfuIKQvPUkUbAhRoHA", {:client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}}
+  config.omniauth :facebook, "357671007647745", "910dc32cd1722f5466d725b4b15aa7ab"
+  config.omniauth :twitter, "81lnIYKf5J52Zvr2ezEXTg", "YPT2TfI7jzmiemHiZVIpbbWUHfuIKQvPUkUbAhRoHA"
 end

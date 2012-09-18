@@ -2,4 +2,14 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  layouts:
+    application:
+      links:
+        home: "Home"
+        profile_settings: "Profile settings"
+        logout: "Logout"
+        sign_in: "Sign in"
+        sign_up: "Sign up"
+        home: "Home"
+        events: "Events"
   hello: "Hello world"

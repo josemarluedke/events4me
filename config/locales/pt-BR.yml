@@ -1,0 +1,16 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pt-BR:
+  layouts:
+    application:
+      links:
+        home: "Início"
+        profile_settings: "Configurações de perfil"
+        logout: "Sair"
+        sign_in: "Entrar"
+        sign_up: "Inscrever-se"
+        home: "Início"
+        events: "Eventos"
+
+  hello: "Olá mundo"

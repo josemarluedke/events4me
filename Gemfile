@@ -30,6 +30,9 @@ gem 'simple_form'
 gem 'auto_html'
 gem 'useragent'
 
+# Navigation
+gem 'simple-navigation'
+
 # Administration and access management
 gem 'rails_admin'
 gem 'cancan'
@@ -55,4 +58,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem "capybara"
   gem "jasmine"
+end
+
+group :development do
+  gem 'pry'
+  gem 'awesome_print'
 end
