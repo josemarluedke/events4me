@@ -7,6 +7,7 @@ class Event < ActiveRecord::Base
   attr_accessible :description, :duration, :image, :min_age, :name, :visible, :place_id, :place, :session, :session_id, :organization, :organization_id
   validates :description, :min_age, :name, :visible, :place, presence: true
 
+  has_and_belongs_to_many :users
   attr_accessible :sessions_attributes
   accepts_nested_attributes_for :sessions, :allow_destroy => true
 
