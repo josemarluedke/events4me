@@ -59,12 +59,6 @@ describe User do
         @user.password_confirmation = nil
         @user.should be_valid
       end
-
-      it "should have organizations" do
-        @organization = Organization.make!
-        @user.organizations << @organization
-        @user.organizations.first.should eq @organization
-      end
     end
   end
 
@@ -81,5 +75,6 @@ describe User do
     it { should have_many :authorizations }
     it { should have_many :devices }
     it { should have_many :events }
+    it { should have_and_belong_to_many :organizations }
   end
 end
