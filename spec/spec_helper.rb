@@ -39,12 +39,8 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.before(:suite) do
-    %x[say iniciando testes]
     ActiveRecord::Base.connection.execute "SET client_min_messages TO warning;"
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
-  end
-  config.after(:suite) do
-    %x[say testado]
   end
 end

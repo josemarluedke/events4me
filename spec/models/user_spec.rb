@@ -54,10 +54,16 @@ describe User do
         @user.reload.should_not be_password_required
       end
 
-      it "shoult not be required password" do
+      it "should not be required password" do
         @user.password = nil
         @user.password_confirmation = nil
         @user.should be_valid
+      end
+
+      it "should have organizations" do
+        @organization = Organization.make!
+        @user.organizations << @organization
+        @user.organizations.first.should eq @organization
       end
     end
   end

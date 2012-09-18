@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :authorizations, dependent: :destroy
   has_many :devices, dependent: :destroy
   has_and_belongs_to_many :organizations
+  accepts_nested_attributes_for :organizations, :allow_destroy => true
   validates :name, :push, :birthdate, presence: true
   before_save :ensure_authentication_token
 

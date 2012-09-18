@@ -4,8 +4,6 @@ class CreateTableOrganizationsUsers < ActiveRecord::Migration
       t.references :user
       t.references :organization
       t.boolean :admin
-
-      t.timestamps
     end
   end
 end
