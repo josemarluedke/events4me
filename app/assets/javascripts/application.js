@@ -18,6 +18,6 @@
 //= require_tree ./lib
 //= require ./app.js
 //= require_tree ./app
-//= require ./init.js
+//= require init.js
 //= require bootstrap
 
