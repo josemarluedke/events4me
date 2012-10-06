@@ -10,3 +10,8 @@ App = window.App =
     finish: ->
       # Something here. This is called in every page, with or without Turbolinks.
 
+  Collections: {}
+  Models: {}
+
+  # Views
+  Events: {}

@@ -17,6 +17,8 @@
 //= require ./lib/backbone.js
 //= require_tree ./lib
 //= require ./app.js
+//= require_tree ./app/models
+//= require_tree ./app/collections
 //= require_tree ./app
 //= require init.js
 //= require bootstrap
