@@ -1,20 +1,13 @@
-App.Events.Index = Backbone.View.extend
+App.Events.Index = App.PaginatedView.extend
   el: "#events-list"
-  initialize: ->
-    @eventsList = new App.Collections.Events()
-    @eventsList.on 'reset', @addAll, @
-    @eventsList.fetch()
+  collection: new App.Collections.Events()
 
-  addOne: (item) ->
-    view = new @EventView model: item
-    this.$el.append view.render()
+  initializeView: ->
+  renderEmpty: ->
 
-  addAll: ->
-    this.$el.html ""
-    @eventsList.each @addOne, @
-
-  EventView: Backbone.View.extend
-    template: _.template('<h3><%= name %></h3> <p><%= description %></p>')
+  modelView: Backbone.View.extend
+    tagName: 'li'
+    template: _.template('<h3><%= name %></h3> <p><%= description %><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>')
 
     render: ->
       this.$el.html @template(@model.toJSON())

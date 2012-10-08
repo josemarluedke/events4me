@@ -1,4 +1,4 @@
-App.Collections.Events = Backbone.Collection.extend
+App.Collections.Events = App.PaginatedCollection.extend
   url: '/events'
   model: App.Models.Event
 

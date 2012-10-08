@@ -30,6 +30,7 @@ gem 'initjs'
 gem 'simple_form'
 gem 'auto_html'
 gem 'useragent'
+gem 'will_paginate'
 
 # Navigation
 gem 'simple-navigation'
