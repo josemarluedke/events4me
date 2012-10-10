@@ -20,6 +20,8 @@ gem 'omniauth-twitter'
 gem 'thin'
 gem 'heroku'
 
+gem 'capistrano'
+
 # Frontend stuff
 gem 'jquery-rails'
 gem "slim"
